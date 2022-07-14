@@ -27,10 +27,25 @@ function addNum(x, y) {
 }
 //void
 function log(message) {
-    return message;
+    // return message;
 }
 const kidd = {
     name: "Kid",
     age: 1,
 };
+kidd.age = 3;
 console.log();
+function map(arr, func) {
+    return arr.map(func);
+}
+// Parameter 'n' is of type 'string'
+// 'parsed' is of type 'number[]'
+const parsed = map(["1", "2", "3"], (n) => parseInt(n));
+console.log(parsed);
+function len(x) {
+    return x.length;
+}
+console.log(len("true"));
+function sum({ a, b, c }) {
+    console.log(a + b + c);
+}

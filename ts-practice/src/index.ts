@@ -42,20 +42,47 @@ function addNum(x: number, y: string): string {
 
 //void
 function log(message: string | number): void {
-  return message;
-} 
+	// return message;
+}
 
 // interfaces
 
 interface Cat {
-  name: string,
-  age: number,
-  isHungry?: boolean
+	name: string;
+	age: number;
+	isHungry?: boolean;
 }
 
 const kidd: Cat = {
-  name: "Kid",
-  age: 1,
+	name: "Kid",
+	age: 1,
+};
+
+kidd.age = 3;
+
+console.log();
+
+function map<Input, Output>(
+	arr: Input[],
+	func: (arg: Input) => Output
+): Output[] {
+	return arr.map(func);
 }
 
-console.log()
+// Parameter 'n' is of type 'string'
+// 'parsed' is of type 'number[]'
+const parsed = map(["1", "2", "3"], (n) => parseInt(n));
+
+console.log(parsed);
+
+function len(s: string): number;
+function len(arr: any[]): number;
+function len(x: any) {
+	return x.length;
+}
+
+console.log(len("true"));
+
+function sum({ a, b, c }: { a: number; b: number; c: number }) {
+	console.log(a + b + c);
+}
